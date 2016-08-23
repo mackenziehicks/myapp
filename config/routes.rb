@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   get '/game' => 'game#try'
-  get '/new_game' => 'game#reset'
+  get '/reset' => 'game#reset'
+  get '/new_game' =>'game#new_game'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

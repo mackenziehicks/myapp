@@ -1,2 +1,10 @@
-<h1> <%=@message%></h1>
-<a href="http://localhost:3000/game?">New Game</a>
+
+<h1> Hello <%=@given_name%>!</h1>
+<!-- <h1> <%=@message%></h1> -->
+<h2>Type a number from 0-100</h2>
+<form action="/game" method="get">
+  <input type="text" name="guess">
+  <input type="Submit">
+</form>
+
+  <a href="index.html">New Player</a>

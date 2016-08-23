@@ -4,12 +4,16 @@
     <title>Hi/Lo Game</title>
   </head>
   <body>
-    <h1> <%=@message%></h1>
+    <h1> <%=@given_name%>, <%=@message%></h1>
     <h1> <%=@result%> </h1>
     <br>
+    <form action="/game" method="get">
+      <input type="text" name="guess">
+      <input type="Submit">
+    </form>
+
     <h2>Guesses: <%=@counter%>/5</h2>
 
     <br>
-    <%=@random%>
   </body>
 </html>

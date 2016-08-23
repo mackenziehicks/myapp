@@ -1,10 +1,19 @@
-class GameController < ActionController::Base
+class GameController < ApplicationController
+
+  def new_game
+
+    if params.has_key?(:given_name)
+     cookies[:given_name] = params[:given_name]
+    end
+    @given_name = cookies[:given_name]
+
+  end
 
   def try
-
+    @given_name = cookies[:given_name]
     if params[:guess].nil?
       @message = "Please enter a number from 0 to 100"
-      render 'reset.html.erb'
+      render 'new_game.html.erb'
     else
       #if there is no cookie for counter, set the cookie to 0.
       if cookies[:counter].nil?
@@ -51,6 +60,7 @@ class GameController < ActionController::Base
   end
 
   def reset
+    @given_name = cookies[:given_name]
     prng = Random.new
     @message = "You're all set! Start guessing NOW! :-D"
     @random = prng.rand(101)
